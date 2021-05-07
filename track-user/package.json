@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/minhtan4711/track-user#readme",
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.4",
     "bcrypt": "^5.0.1",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
