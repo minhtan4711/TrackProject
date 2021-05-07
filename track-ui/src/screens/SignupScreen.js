@@ -1,31 +1,28 @@
-import React, { useState, useContext } from 'react'
-import { View, StyleSheet, TouchableOpacity } from 'react-native'
-import { Text, Input, Button } from 'react-native-elements'
-import Spacer from '../components/Spacer' // add some margin to elements
+import React, { useContext } from 'react'
+import { View, StyleSheet } from 'react-native'
+import { NavigationEvents } from 'react-navigation' // pass a callback function and will be automatic call
 import { Context as AuthContext } from '../context/AuthContext'
 import AuthForm from '../components/AuthForm'
+import NavLink from '../components/NavLink'
 
-const SignupScreen = ({ navigation }) => {
-    const { state, signup } = useContext(AuthContext)
+const SignupScreen = () => {
+    const { state, signup, clearErrorMessage } = useContext(AuthContext)
 
-    // get the user email and password by useState
-
-
-
+    
 
     return (
         <View style={styles.container}>
+            <NavigationEvents onWillBlur={clearErrorMessage} />
             <AuthForm
                 headerText='Sign Up for Tracker'
                 errorMessage={state.errorMessage}
                 submitButtonText='Sign Up'
                 onSubmit={signup}
             />
-            <TouchableOpacity onPress={() => navigation.navigate('Signin')}>
-                <Spacer>
-                    <Text style={styles.link}>Already have an account? Sign in instead</Text>
-                </Spacer>
-            </TouchableOpacity>
+            <NavLink
+                routeName='Signin'
+                text='Already have an account? Sign in instead!'
+            />
         </View>
     )
 }
@@ -41,10 +38,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         marginBottom: 200
-    },
-    link: {
-        color: 'blue'
     }
 })
 
-export default SignupScreen;
+export default SignupScreen
