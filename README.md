@@ -47,9 +47,11 @@ To run follow all this steps:
 
     ``` npm run dev ```
 
-4.  Start the app by expo
+4.  Start the server by _ngrok_ package and start the app by expo
 
     ``` cd ../track_ui  ```
+
+    ``` ngrok http 8080 ```
 
     ``` expo start ```
 
