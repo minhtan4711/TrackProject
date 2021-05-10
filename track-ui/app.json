@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "track-ui",
-    "slug": "track-ui",
+    "name": "TrackMe",
+    "slug": "trackme",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,6 +28,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
+    "description": "",
+    "githubUrl": "https://github.com/minhtan4711/TrackProject"
   }
 }
